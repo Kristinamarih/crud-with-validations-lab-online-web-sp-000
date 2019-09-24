@@ -7,7 +7,7 @@ class Song < ActiveRecord::Base
   validates :genre, presence: true
 
   def is_released?
-    if release_year.present? && release_year < Date.today.year
+    if release_year < Date.today.year
       errors.add(:release_year, "Release year can't be in the future")
     end
   end
