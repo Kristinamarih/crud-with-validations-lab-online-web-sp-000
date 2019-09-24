@@ -14,7 +14,7 @@ class Song < ActiveRecord::Base
 
   def unique_title
     if Song.any? {|s| s.title == title && s.artist_name == artist_name && s.release_year == release_year}
-      errors.add(:title, "no duplicate titles")
+      errors.add(:title, "No duplicate titles")
     end
   end
 end
